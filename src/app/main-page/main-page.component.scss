@@ -1,0 +1,39 @@
+.main_container {
+  display: flex;
+  height: 100vh;
+  .listing_section {
+    width: 75%;
+    border-right: 2px solid #243a73;
+    .sub_section {
+      height: 50%;
+      overflow: auto;
+      scrollbar-width: thin;
+      .listing_section-header {
+        background-color: #243a73;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        margin-bottom: 10px;
+        max-height: 40px;
+      }
+    }
+  }
+  .form_section {
+    width: 25%;
+    .form_section-header {
+      display: flex;
+      button {
+        height: 49px;
+        width: 50%;
+        border: none;
+        &.selected {
+          background-color: #7C3E66;
+          color: white;
+        }
+      }
+    }
+    .form_container {
+      padding: 10px;
+    }
+  }
+}

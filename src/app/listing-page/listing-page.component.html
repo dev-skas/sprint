@@ -1,0 +1,6 @@
+<div class="item_container">
+  <div *ngFor="let item of items" class="item">
+    <span>{{ item.point }}</span>
+  </div>
+  <span *ngIf="items.length == 0" class="no_data">No data to display</span>
+</div>

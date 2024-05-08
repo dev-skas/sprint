@@ -1,0 +1,31 @@
+<div class="main_container">
+  <div class="listing_section">
+    <div class="sub_section">
+      <div class="listing_section-header">User Stories</div>
+      <app-listing-page [items]="userStoryListings"></app-listing-page>
+    </div>
+    <div class="sub_section">
+      <div class="listing_section-header">Sprint</div>
+      <app-listing-page [items]="SprintListings"></app-listing-page>
+    </div>
+  </div>
+  <div class="form_section">
+    <div class="form_section-header">
+      <button (click)="selected = 0" [ngClass]="{ selected: selected == 0 }">
+        Create User Story
+      </button>
+      <button (click)="selected = 1" [ngClass]="{ selected: selected == 1 }">
+        Plan Sprint
+      </button>
+    </div>
+    <div class="form_container">
+      <app-create-story
+        (createItem)="addItem($event)"
+        [items]="userStoryListings"
+        *ngIf="selected == 0"
+      ></app-create-story>
+      <app-sprint-plan (AutoSelect)="SelectStories($event)" (ClearItem)="clearAll($event)" *ngIf="selected == 1">
+      </app-sprint-plan>
+    </div>
+  </div>
+</div>

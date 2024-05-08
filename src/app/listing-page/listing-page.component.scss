@@ -1,0 +1,18 @@
+.item_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  .item {
+    height: 70px;
+    width: 70px;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .no_data {
+    text-align: center;
+    width: 100%;
+  }
+}

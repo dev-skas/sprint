@@ -1,0 +1,18 @@
+<div [formGroup]="Form" class="form_container">
+  <div>
+    <label for="lname">
+      Sprint Point
+      <span
+        *ngIf="f.point.errors?.['required'] && (f.point.touched || submitted)"
+        class="error_msg"
+        >required</span
+      ></label
+    >
+    <input formControlName="point" type="number" placeholder="Story Point" />
+  </div>
+
+  <button (click)="automate()">AUTO SELECT STORIES</button>
+
+  <button (click)="clear()">CLEAR STORIES</button>
+  <button (click)="clearSprint()">CLEAR SPRINT</button>
+</div>

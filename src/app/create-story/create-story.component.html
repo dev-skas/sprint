@@ -1,0 +1,29 @@
+<div [formGroup]="Form" class="form_container">
+  <div>
+    <label>
+      Story Name
+      <span
+        *ngIf="f.name.errors?.['required'] && (f.name.touched || submitted)"
+        class="error_msg"
+        >required</span
+      ></label
+    >
+    <input formControlName="name" type="text" placeholder="Story Name" />
+  </div>
+
+  <div>
+    <label for="lname">
+      Story Point
+      <span
+        *ngIf="f.point.errors?.['required'] && (f.point.touched || submitted)"
+        class="error_msg"
+        >required</span
+      ></label
+    >
+    <input formControlName="point" type="number" placeholder="Story Point" />
+  </div>
+  <span *ngIf="duplicated" class="error_msg"
+    >A user story with the same name already exists.</span
+  >
+  <button (click)="create()">ADD STORY</button>
+</div>
